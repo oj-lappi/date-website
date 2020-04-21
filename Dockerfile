@@ -10,3 +10,7 @@ WORKDIR /code
 ADD requirements.txt /code/
 RUN pip install -r requirements.txt
 ADD . /code/
+WORKDIR /
+RUN git clone https://github.com/oj-lappi/date-overlay.git
+RUN cp -r date-overlay/* /code
+WORKDIR /code
